@@ -51,24 +51,29 @@
               <label class="label text-black font-bold text-lg"
                 >Mobile Number</label
               >
-              <input
-                type="email"
+              <input id="input-number"
+                maxlength="11"
+                minlength="11"
+                type="tel"
                 class="input rounded-full"
                 placeholder="Enter your number"
               />
               <label class="label text-black font-bold text-lg"
                 >4 Digit Pin</label
               >
-              <input
+              <input id="input-pin"
+                maxlength="4"
+                minlength="4"
                 type="password"
                 class="input rounded-full"
                 placeholder="Enter 4 Digit Pin"
               />
-              <button class="btn btn-primary rounded-full mt-4">Login</button>
+              <button id="login-btn" class="btn btn-primary rounded-full mt-4">Login</button>
             </fieldset>
           </div>
         </div>
       </div>
     </header>
+    <script src="./script/login.js"></script>
   </body>
 </html>
