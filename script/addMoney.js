@@ -19,6 +19,8 @@ document.getElementById("add-money-btn").addEventListener("click", function () {
   if (pin === "7266") {
     alert(`Add Money Success from ${bankAccount} at ${new Date()}`);
     setBalance(newBalance);
+
+    
   } else {
     alert("Invalid Pin");
     return;
