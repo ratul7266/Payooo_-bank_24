@@ -14,7 +14,7 @@ document.getElementById("login-btn").addEventListener("click", function () {
     alert("Login Sucess");
 
     // window.location.replace("/home.html")
-    window.location.assign("/home.html");
+    window.location.assign("../home.html");
   } else {
     alert("Something is Wrong || Login failed || Error 404!!!");
     return;
