@@ -1,31 +1,38 @@
-document.getElementById("withdraw-btn").addEventListener('click', function(){
-    const cashoutNumber = getValueFromInput('cashout-number')
-    if(cashoutNumber.length !=11){
+document.getElementById("withdraw-btn").addEventListener("click", function () {
+  const cashoutNumber = getValueFromInput("cashout-number");
+  if (cashoutNumber.length != 11) {
     alert("Invalid Agent Number");
-        return;
+    return;
   }
 
-    const cashoutAmount = getValueFromInput('cashout-amount')
-    
+  const cashoutAmount = getValueFromInput("cashout-amount");
+
   const currentBalance = getBalance();
 
-    const newBalance = currentBalance - Number(cashoutAmount);
-    if (newBalance < 0) {
+  const newBalance = currentBalance - Number(cashoutAmount);
+  if (newBalance < 0) {
     alert("Invalid Amount");
     return;
   }
 
-  const pin = getValueFromInput("cashout-pin")
+  const pin = getValueFromInput("cashout-pin");
   if (pin === "7266") {
     alert("cashout successfull");
-    setBalance(newBalance)
+    setBalance(newBalance);
+
+    const history = document.getElementById("history");
+    const newHistory = document.createElement("div");
+    newHistory.innerHTML = `
+    <div class="card-body card bg-base-100 w-full max-w-sm shrink-0 mx-auto ">
+    CashOut ${cashoutAmount} TAKA Success to ${cashoutNumber} at ${new Date()}
+    </div>
+    `;
+    history.append(newHistory);
   } else {
     alert("Invalid Pin");
     return;
   }
-})
-
-
+});
 
 // document.getElementById("withdraw-btn").addEventListener("click", function () {
 //   const cashoutNumberInput = document.getElementById("cashout-number");
